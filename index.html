@@ -2,86 +2,335 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Matthew Woytych, MSA – Tax & Accounting Professional</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fa; color: #222; }
-    header { background: #1f3b4d; color: #fff; padding: 50px 20px; text-align: center; }
-    header h1 { margin: 0; font-size: 2.4rem; }
-    header p { margin: 8px 0; font-size: 1.05rem; }
-    a { color: #1f3b4d; text-decoration: none; }
-    .container { max-width: 900px; margin: 0 auto; padding: 30px 20px; }
-    h2 { border-bottom: 2px solid #ddd; padding-bottom: 6px; margin-top: 40px; }
-    .pill { display: inline-block; background: #e3e7ee; padding: 6px 12px; border-radius: 12px; margin: 4px 6px 0 0; font-size: 0.85rem; }
-    .job { margin-bottom: 25px; }
-    .job-title { font-weight: bold; font-size: 1.1rem; }
-    .job-meta { font-size: 0.9rem; color: #555; }
-    footer { text-align: center; padding: 30px 10px; font-size: 0.85rem; color: #666; }
+    :root {
+      --primary: #1f3b4d;
+      --accent: #0f766e;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --bg: #f9fafb;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 24px;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      padding: 32px 40px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+
+    header h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    header .contact a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    header .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .section {
+      margin-top: 18px;
+    }
+
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.1fr 1.2fr;
+      gap: 18px;
+    }
+
+    .about {
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #f3f4f6;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .item {
+      margin-bottom: 10px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .item-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .item-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .item-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    ul.bullets {
+      margin-top: 4px;
+      padding-left: 18px;
+      font-size: 0.85rem;
+      color: var(--text-main);
+    }
+
+    ul.bullets li {
+      margin-bottom: 2px;
+    }
+
+    @media (max-width: 720px) {
+      .page {
+        padding: 20px;
+      }
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <main class="page">
+    <header>
+      <h1>Matthew Woytych, MSA</h1>
+      <h2>Tax &amp; Accounting Professional</h2>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/mattwoytych" target="_blank">
+          linkedin.com/in/mattwoytych
+        </a>
+      </div>
+    </header>
 
-<header>
-  <h1>Matthew Woytych, MSA</h1>
-  <p style="text-align:center;">Cotati, CA · Tax & Accounting Professional</p>
-  <p><a href="https://www.linkedin.com/in/mattwoytych" target="_blank">LinkedIn</a></p>
-</header>
+    <!-- ABOUT + CORE SKILLS -->
+    <section class="section">
+      <div class="two-col">
+        <div>
+          <div class="section-title">Profile</div>
+          <p class="about">
+            Staff accountant with public accounting, corporate tax, and GL experience, combining an MSA with hands‑on
+            work in reconciliations, AP, cash application, and process improvement. Comfortable owning recurring
+            close tasks, researching variances, and communicating clearly with non‑accounting stakeholders. Brings
+            a data‑driven mindset (Excel, SQL, Python) to streamline workflows and improve accuracy in fast‑paced,
+            deadline‑driven environments.
+          </p>
+        </div>
 
-<div class="container">
+        <div>
+          <div class="section-title">Core Skills</div>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      Detail‑oriented tax and accounting professional with experience supporting complex partnership filings,
-      multi‑state reporting, and private equity compliance workflows at Ernst & Young. Strong foundation in
-      workpaper preparation, data validation, and documentation accuracy. Known for steady execution in
-      high‑volume environments and for improving clarity and consistency across team processes. Completed
-      all coursework required to sit for the CPA exam.
-    </p>
-  </section>
+          <div class="item">
+            <div class="item-sub"><strong>Accounting &amp; Tax</strong></div>
+            <div class="pill-list">
+              <span class="pill">GL reconciliations</span>
+              <span class="pill">Month‑end close</span>
+              <span class="pill">AP &amp; cash application</span>
+              <span class="pill">Fixed assets</span>
+              <span class="pill">Tax preparation</span>
+              <span class="pill">Workpapers</span>
+            </div>
+          </div>
 
-  <section>
-    <h2>Core Skills</h2>
-    <div>
-      <span class="pill">Partnership Tax (1065/K‑1)</span>
-      <span class="pill">Private Equity Funds</span>
-      <span class="pill">Multi‑State Returns</span>
-      <span class="pill">Composite Returns</span>
-      <span class="pill">Capital Accounts</span>
-      <span class="pill">Allocation Schedules</span>
-      <span class="pill">Federal & State Notice Support</span>
-      <span class="pill">PartnerForms</span>
-      <span class="pill">Thomson Reuters GoSystem</span>
-      <span class="pill">ONESOURCE / Route One</span>
-      <span class="pill">EY Canvas / GTP</span>
-      <span class="pill">Excel (Advanced)</span>
-      <span class="pill">SQL</span>
-      <span class="pill">SharePoint</span>
-      <span class="pill">Data Reconciliation</span>
-      <span class="pill">Process Improvement</span>
-      <span class="pill">Documentation Clarity</span>
-      <span class="pill">Cross‑Functional Coordination</span>
-      <span class="pill">Training Support</span>
-    </div>
-  </section>
+          <div class="item">
+            <div class="item-sub"><strong>Tools &amp; Data</strong></div>
+            <div class="pill-list">
+              <span class="pill">Excel (advanced)</span>
+              <span class="pill">Pivot tables</span>
+              <span class="pill">XLOOKUP</span>
+              <span class="pill">SQL</span>
+              <span class="pill">Python</span>
+              <span class="pill">Automation</span>
+            </div>
+          </div>
 
-  <section>
-    <h2>Experience</h2>
+          <div class="item">
+            <div class="item-sub"><strong>Professional</strong></div>
+            <div class="pill-list">
+              <span class="pill">Communication</span>
+              <span class="pill">Collaboration</span>
+              <span class="pill">Documentation</span>
+              <span class="pill">Continuous improvement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="job">
-      <div class="job-title">Tax Support Staff – Ernst & Young LLP (FSO Private Equity)</div>
-      <div class="job-meta">San Francisco, CA · 2023–2025</div>
-      <ul>
-        <li>Prepared and reviewed partnership workpapers with consistently high accuracy across large private‑equity portfolios.</li>
-        <li>Verified entity data across systems, helping reduce rework and strengthen reliability of filings.</li>
-        <li>Supported federal and state notice responses through clear, organized documentation.</li>
-        <li>Contributed to dependable on‑time submissions during peak filing cycles.</li>
-        <li>Helped new staff ramp up more smoothly through patient training and workflow guidance.</li>
-      </ul>
-    </div>
+    <!-- EXPERIENCE -->
+    <section class="section">
+      <div class="section-title">Experience</div>
 
-    <div class="job">
-      <div class="job-title">Assistant Service Coordinator – Hansel Automotive Group</div>
-      <div class="job-meta">Santa Rosa & Petaluma, CA · 2008
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Staff Accountant</div>
+          <div class="item-meta">San Francisco Bay Area · 2025 – Present</div>
+        </div>
+        <div class="item-sub">General ledger, reconciliations, AP, and cash application</div>
+        <ul class="bullets">
+          <li>Own recurring GL reconciliations, investigate variances, and prepare support for review and audit.</li>
+          <li>Process AP and cash application with high accuracy, maintaining clean aging and resolving issues.</li>
+          <li>Use Excel to analyze trends, identify anomalies, and improve reporting quality.</li>
+          <li>Document processes and propose improvements to reduce manual work and errors.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Tax Staff II – Ernst &amp; Young (EY)</div>
+          <div class="item-meta">San Francisco Bay Area · Prior Role</div>
+        </div>
+        <div class="item-sub">Public accounting – tax compliance &amp; support</div>
+        <ul class="bullets">
+          <li>Prepared and reviewed individual and business tax returns under tight deadlines.</li>
+          <li>Built organized workpapers, tying to source documents and resolving discrepancies.</li>
+          <li>Collaborated with seniors and managers to research issues and document positions.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Data Analysis Intern – Broadstreet</div>
+          <div class="item-meta">Remote · Prior Role</div>
+        </div>
+        <div class="item-sub">Data‑driven support for business and policy questions</div>
+        <ul class="bullets">
+          <li>Used Excel, SQL, and Python to clean, analyze, and visualize datasets.</li>
+          <li>Translated technical findings into concise summaries for non‑technical audiences.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Campus Ambassador – Skywork.ai</div>
+          <div class="item-meta">Sonoma State University · Prior Role</div>
+        </div>
+        <div class="item-sub">Communication, outreach, and product advocacy</div>
+        <ul class="bullets">
+          <li>Represented a technology product on campus, explaining value and use cases.</li>
+          <li>Developed concise messaging tailored to different audiences.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section">
+      <div class="section-title">Education</div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">Master of Science in Accountancy</div>
+          <div class="item-meta">California State University, Sacramento</div>
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">B.S. Business Administration – Accounting</div>
+          <div class="item-meta">Sonoma State University</div>
+        </div>
+        <div class="item-sub">Minor in Applied Statistics</div>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <div class="item-title">A.S. Computer Information Systems (in progress)</div>
+          <div class="item-meta">College of Marin · Expected Aug 2026</div>
+        </div>
+        <div class="item-sub">Applied Accounting Certificate, Dec 2025</div>
+      </div>
+    </section>
+
+    <!-- ADDITIONAL -->
+    <section class="section">
+      <div class="section-title">Additional</div>
+
+      <div class="item">
+        <div class="item-sub"><strong>Certifications &amp; Exams</strong></div>
+        <ul class="bullets">
+          <li>CPA exam requirements completed; preparing for REG.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-sub"><strong>Technical</strong></div>
+        <div class="pill-list">
+          <span class="pill">Excel (advanced)</span>
+          <span class="pill">SQL (intermediate)</span>
+          <span class="pill">Python (intermediate)</span>
+          <span class="pill">Process automation</span>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
