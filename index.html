@@ -1,352 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Matthew Woytych, MSA – Tax & Accounting Professional</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <title>SF to Boston Trip – Master WBS</title>
   <style>
-    :root {
-      --primary: #1f3b4d;
-      --accent: #0f766e;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --bg: #f9fafb;
-      --border: #e5e7eb;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      line-height: 1.5;
-      padding: 24px;
-    }
-
-    .page {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #ffffff;
-      border: 1px solid var(--border);
-      padding: 32px 40px;
-    }
-
-    header {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      margin: 0;
+      padding: 40px;
       text-align: center;
-      margin-bottom: 24px;
     }
 
-    header h1 {
-      font-size: 2rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--primary);
-      margin-bottom: 4px;
-    }
-
-    header h2 {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      margin-bottom: 10px;
-    }
-
-    header .contact a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-
-    header .contact a:hover {
-      text-decoration: underline;
-    }
-
-    .section {
-      margin-top: 18px;
-    }
-
-    .section-title {
-      font-size: 0.95rem;
+    /* Top box styled like lower boxes */
+    .wbs-title {
+      display: inline-block;
+      background: #f9f9f9;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      padding: 10px 25px;
+      font-size: 18px;
       font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--primary);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 4px;
-      margin-bottom: 8px;
+      color: #222;
+      position: relative;
+      margin-bottom: 60px;
     }
 
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.1fr 1.2fr;
-      gap: 18px;
+    /* Vertical line from title to horizontal connector */
+    .wbs-title::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -30px;
+      width: 2px;
+      height: 30px;
+      background: #000;
+      transform: translateX(-50%);
     }
 
-    .about {
-      font-size: 0.9rem;
-      color: var(--text-main);
-    }
-
-    .pill-list {
+    .wbs-container {
+      position: relative;
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 4px;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      margin-top: 30px;
     }
 
-    .pill {
-      font-size: 0.8rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #f3f4f6;
-      color: var(--text-muted);
-      white-space: nowrap;
+    /* Horizontal connector line */
+    .wbs-container::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #000;
+      margin: 0 60px;
     }
 
-    .item {
-      margin-bottom: 10px;
+    .wbs-box {
+      width: 220px;
+      background: #f9f9f9;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      padding: 10px 15px;
+      text-align: left;
+      font-size: 13px;
+      position: relative;
     }
 
-    .item-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 8px;
+    /* Vertical connectors from horizontal line to each box */
+    .wbs-box::before {
+      content: "";
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #000;
+      transform: translateX(-50%);
     }
 
-    .item-title {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-main);
+    .wbs-subtitle {
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 6px;
     }
 
-    .item-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
+    .wbs-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
     }
 
-    .item-sub {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 2px;
+    .wbs-list li {
+      margin: 3px 0;
     }
 
-    ul.bullets {
-      margin-top: 4px;
-      padding-left: 18px;
-      font-size: 0.85rem;
-      color: var(--text-main);
+    .wbs-code {
+      font-weight: 700;
+      margin-right: 4px;
     }
 
-    ul.bullets li {
-      margin-bottom: 2px;
-    }
-
-    @media (max-width: 720px) {
-      .page {
+    @media print {
+      body {
+        margin: 0;
         padding: 20px;
       }
-      .two-col {
-        grid-template-columns: 1fr;
+      .wbs-box, .wbs-title {
+        box-shadow: none;
+        border: 1px solid #000;
+      }
+      .wbs-title::after,
+      .wbs-container::before,
+      .wbs-box::before {
+        background: #000;
       }
     }
   </style>
 </head>
-
 <body>
-  <main class="page">
-    <header>
-      <h1>Matthew Woytych, MSA</h1>
-      <h2>Tax &amp; Accounting Professional</h2>
-      <div class="contact">
-        <a href="https://www.linkedin.com/in/mattwoytych" target="_blank">
-          linkedin.com/in/mattwoytych
-        </a>
-      </div>
-    </header>
+  <div class="wbs-title">1. SF to Boston Trip – Master WBS</div>
 
-    <!-- ABOUT + CORE SKILLS -->
-    <section class="section">
-      <div class="two-col">
-        <div>
-          <div class="section-title">Profile</div>
-          <p class="about">
-            Early‑career tax and accounting professional with experience in public accounting, data analysis, and AI‑assisted workflow projects. Brings an MSA foundation, strong documentation habits, and a technical skillset (Excel, SQL, Python) to support accurate workpapers, clean reconciliations, and efficient processes. Known for being coachable, detail‑oriented, and able to learn complex systems quickly.
-          </p>
-        </div>
+  <div class="wbs-container">
+    <div class="wbs-box">
+      <div class="wbs-subtitle">1.2 Project Planning</div>
+      <ul class="wbs-list">
+        <li><span class="wbs-code">1.2.1</span>Define scope & objectives</li>
+        <li><span class="wbs-code">1.2.2</span>Estimate budget (travel, lodging, meals)</li>
+        <li><span class="wbs-code">1.2.3</span>Develop schedule & milestones</li>
+      </ul>
+    </div>
 
-        <div>
-          <div class="section-title">Core Skills</div>
+    <div class="wbs-box">
+      <div class="wbs-subtitle">1.3 Travel Preparation</div>
+      <ul class="wbs-list">
+        <li><span class="wbs-code">1.3.1</span>Book flights and hotels</li>
+        <li><span class="wbs-code">1.3.2</span>Arrange ground transportation</li>
+        <li><span class="wbs-code">1.3.3</span>Prepare packing list & documents</li>
+      </ul>
+    </div>
 
-          <div class="item">
-            <div class="item-sub"><strong>Accounting &amp; Tax</strong></div>
-            <div class="pill-list">
-              <span class="pill">Workpapers</span>
-              <span class="pill">Tax preparation</span>
-              <span class="pill">Reconciliations</span>
-              <span class="pill">Documentation</span>
-              <span class="pill">Variance checks</span>
-            </div>
-          </div>
+    <div class="wbs-box">
+      <div class="wbs-subtitle">1.4 Execution Phase</div>
+      <ul class="wbs-list">
+        <li><span class="wbs-code">1.4.1</span>Departure from San Francisco</li>
+        <li><span class="wbs-code">1.4.2</span>Transit and arrival in Boston</li>
+        <li><span class="wbs-code">1.4.3</span>On-site activities & meetings</li>
+      </ul>
+    </div>
 
-          <div class="item">
-            <div class="item-sub"><strong>Tools &amp; Data</strong></div>
-            <div class="pill-list">
-              <span class="pill">Excel (advanced)</span>
-              <span class="pill">Pivot tables</span>
-              <span class="pill">XLOOKUP</span>
-              <span class="pill">SQL</span>
-              <span class="pill">Python</span>
-              <span class="pill">Automation</span>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="item-sub"><strong>Professional</strong></div>
-            <div class="pill-list">
-              <span class="pill">Communication</span>
-              <span class="pill">Collaboration</span>
-              <span class="pill">Continuous improvement</span>
-              <span class="pill">Process discipline</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section class="section">
-      <div class="section-title">Experience</div>
-
-      <!-- EY STAFF II (NOW FIRST) -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Tax Staff II – Ernst &amp; Young (EY)</div>
-          <div class="item-meta">San Francisco Bay Area · Prior Role</div>
-        </div>
-        <div class="item-sub">Wealth &amp; Asset Management – technical and administrative leadership</div>
-        <ul class="bullets">
-          <li>Guided an intern and new staff through Form 1065 workflows, reviewing basic errors before escalation.</li>
-          <li>Maintained and updated Python-based extraction scripts, identifying issues such as K‑1 allocation errors.</li>
-          <li>Helped junior staff interpret automated outputs and reconcile them to source documents.</li>
-          <li>Used EY Canvas, EY GTP, PartnerForms, Thomson Reuters GoSystem, and ONESOURCE/Route One to support compliance workflows.</li>
-          <li>Performed data validation using Excel (pivot tables, XLOOKUP, filters) to ensure accuracy across systems.</li>
-        </ul>
-      </div>
-
-      <!-- EY STAFF I -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Tax Staff I – Ernst &amp; Young (EY)</div>
-          <div class="item-meta">San Francisco Bay Area · Prior Role</div>
-        </div>
-        <div class="item-sub">Diversified Staff Group – foundational tax compliance & workflow support</div>
-        <ul class="bullets">
-          <li>Organized source documents, built clean workpapers, and performed tie-outs for individual, partnership, and corporate returns.</li>
-          <li>Learned EY internal systems and followed firm-standard procedures, escalating issues appropriately and asking clarifying questions.</li>
-          <li>Performed initial data checks using Excel (lookups, filters, pivot tables) to identify missing information and reconcile totals.</li>
-          <li>Supported administrative workflow tasks including tracking deliverables and maintaining documentation to EY quality standards.</li>
-          <li>Collaborated with seniors to understand tax adjustments, entity structures, and review notes while building technical judgment.</li>
-        </ul>
-      </div>
-
-      <!-- SKYWORK.AI -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Campus Ambassador – Skywork.ai</div>
-          <div class="item-meta">College of Marin · Current/Intern</div>
-        </div>
-        <div class="item-sub">AI product outreach, communication, and workflow experimentation</div>
-        <ul class="bullets">
-          <li>Promoted AI tools on campus and demonstrated practical use cases for students and faculty.</li>
-          <li>Developed messaging and adapted communication style for technical and non‑technical audiences.</li>
-        </ul>
-      </div>
-
-      <!-- HEIRLOOM BOX PROJECT -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Heirloom Box – AI Podcast Project</div>
-          <div class="item-meta">BAD 81: AI in Business · Final Team Project</div>
-        </div>
-        <div class="item-sub">Team lead for content integration and AI‑generated media</div>
-        <ul class="bullets">
-          <li>Compiled team research and deliverables into a cohesive presentation and slide deck.</li>
-          <li>Produced a 5‑persona AI‑generated podcast using Skywork.ai to present the project narrative.</li>
-          <li>Coordinated team workflow, ensuring consistent messaging and polished final output.</li>
-        </ul>
-      </div>
-
-      <!-- BROADSTREET -->
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Data Analysis Intern – Broadstreet</div>
-          <div class="item-meta">Remote · Prior Role</div>
-        </div>
-        <div class="item-sub">Data‑driven support for business and policy questions</div>
-        <ul class="bullets">
-          <li>Used Excel, SQL, and Python to clean, analyze, and visualize datasets.</li>
-          <li>Translated technical findings into concise summaries for non‑technical audiences.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- EDUCATION -->
-    <section class="section">
-      <div class="section-title">Education</div>
-
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Master of Science in Accountancy</div>
-          <div class="item-meta">California State University, Sacramento</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">B.S. Business Administration – Accounting</div>
-          <div class="item-meta">Sonoma State University</div>
-        </div>
-        <div class="item-sub">Minor in Applied Statistics</div>
-      </div>
-
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">A.S. Computer Information Systems (in progress)</div>
-          <div class="item-meta">College of Marin · Expected Aug 2026</div>
-        </div>
-        <div class="item-sub">Applied Accounting Certificate, Dec 2025</div>
-      </div>
-    </section>
-
-    <!-- ADDITIONAL -->
-    <section class="section">
-      <div class="section-title">Additional</div>
-
-      <div class="item">
-        <div class="item-sub"><strong>Certifications &amp; Exams</strong></div>
-        <ul class="bullets">
-          <li>CPA exam requirements completed; preparing for REG.</li>
-        </ul>
-      </div>
-
-      <div class="item">
-        <div class="item-sub"><strong>Technical</strong></div>
-        <div class="pill-list">
-          <span class="pill">Excel (advanced)</span>
-          <span class="pill">SQL (intermediate)</span>
-          <span class="pill">Python (intermediate)</span>
-          <span class="pill">Process automation</span>
-        </div>
-      </div>
-    </section>
-  </main>
+    <div class="wbs-box">
+      <div class="wbs-subtitle">1.5 Post-Trip Activities</div>
+      <ul class="wbs-list">
+        <li><span class="wbs-code">1.5.1</span>Expense reporting & reconciliation</li>
+        <li><span class="wbs-code">1.5.2</span>Trip review & lessons learned</li>
+      </ul>
+    </div>
+  </div>
 </body>
 </html>
