@@ -1,414 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Matthew Woytych, MSA – Tax & Accounting Professional</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Tax & Accounting Professional with experience in public accounting, data analysis, AI-assisted workflow automation, and web development." />
+<meta charset="UTF-8" />
+<title>Matthew Woytych, MSA — Accounting Infrastructure Lead</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Big Four–trained accounting infrastructure lead specializing in AI‑orchestrated financial systems, partnership taxation, ASC 606/740, and ERP‑integrated compliance automation." />
 
-  <style>
-    :root {
-      --primary: #1f3b4d;
-      --accent: #0f766e;
-      --text-main: #111827;
-      --text-muted: #4b5563;
-      --bg: #f9fafb;
-      --border: #e5e7eb;
-      --radius: 6px;
-    }
+<style>
+:root {
+  --primary: #0f172a;
+  --accent: #0ea5e9;
+  --bg: #f8fafc;
+  --text: #1e293b;
+  --muted: #64748b;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --radius: 10px;
+}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      line-height: 1.6;
-      padding: 24px;
-    }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  padding: 32px;
+}
 
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      background: #fff;
-      border: 1px solid var(--border);
-      padding: 40px;
-      border-radius: var(--radius);
-    }
+main {
+  max-width: 980px;
+  margin: 0 auto;
+}
 
-    header {
-      text-align: center;
-      margin-bottom: 32px;
-    }
+header {
+  text-align: center;
+  margin-bottom: 48px;
+}
 
-    header h1 {
-      font-size: 2rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--primary);
-      margin-bottom: 6px;
-    }
+header h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--primary);
+}
 
-    header h2 {
-      font-size: 1.05rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
+header h2 {
+  font-size: 1.15rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
 
-    header .contact a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
+header .contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
 
-    header .contact a:hover {
-      text-decoration: underline;
-    }
+nav {
+  margin-top: 18px;
+}
 
-    nav {
-      margin-top: 16px;
-    }
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 0.85rem;
+}
 
-    nav a {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      text-decoration: none;
-      margin: 0 8px;
-    }
+nav a:hover { color: var(--accent); }
 
-    nav a:hover {
-      color: var(--accent);
-    }
+.section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 32px;
+  border-radius: var(--radius);
+  margin-bottom: 32px;
+}
 
-    section {
-      margin-top: 28px;
-    }
+.section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
 
-    .section-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--primary);
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 6px;
-      margin-bottom: 12px;
-    }
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
 
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 6px;
-    }
+.pill {
+  padding: 6px 14px;
+  background: #f1f5f9;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
 
-    .pill {
-      font-size: 0.8rem;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: #f3f4f6;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
+.item {
+  margin-bottom: 24px;
+}
 
-    .item {
-      margin-bottom: 16px;
-    }
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
 
-    .item-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 8px;
-    }
+.item-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
 
-    .item-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-main);
-    }
+.item-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
 
-    .item-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
+.item-sub {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
 
-    .item-sub {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
+ul.bullets {
+  margin-top: 10px;
+  padding-left: 22px;
+}
 
-    ul.bullets {
-      margin-top: 6px;
-      padding-left: 20px;
-      font-size: 0.85rem;
-    }
+ul.bullets li {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
 
-    ul.bullets li {
-      margin-bottom: 4px;
-    }
+footer {
+  text-align: center;
+  margin-top: 48px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
 
-    footer {
-      margin-top: 32px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-align: center;
-    }
-
-    @media (max-width: 720px) {
-      main {
-        padding: 24px;
-      }
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-      .item-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+@media (max-width: 760px) {
+  .two-col { grid-template-columns: 1fr; }
+  body { padding: 20px; }
+}
+</style>
 </head>
 
 <body>
-  <main>
-    <header>
-      <h1>Matthew Woytych, MSA</h1>
-      <h2>Tax &amp; Accounting Professional</h2>
-      <div class="contact">
-        <a href="https://www.linkedin.com/in/mattwoytych" target="_blank" rel="noopener">
-          linkedin.com/in/mattwoytych
-        </a>
+<main>
+
+<header>
+  <h1>Matthew Woytych, MSA</h1>
+  <h2>Accounting Infrastructure Lead · CPA Candidate · EY Big Four Alum</h2>
+  <div class="contact">
+    <a href="https://www.linkedin.com/in/mattwoytych" target="_blank">linkedin.com/in/mattwoytych</a>
+  </div>
+
+  <nav>
+    <a href="#profile">Profile</a>
+    <a href="#competencies">Competencies</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+  </nav>
+</header>
+
+<section id="profile" class="section">
+  <div class="section-title">Professional Profile</div>
+  <p>
+    Big Four–trained (EY) financial infrastructure lead specializing in transitioning manual accounting functions into automated, AI‑orchestrated systems. Expert in partnership taxation, ASC 606 usage‑based revenue, ASC 740, and multi‑entity U.S. GAAP compliance for high‑growth tech entities. Winner of the EY AI Hackathon, with a proven track record of building AI agents and “Command Centers” to manage complex engagement pipelines and financial reporting.
+  </p>
+</section>
+
+<section id="competencies" class="section">
+  <div class="section-title">Core Competencies</div>
+  <div class="two-col">
+    <div>
+      <h3>Infrastructure & Automation</h3>
+      <div class="pill-list">
+        <span class="pill">AI Orchestration</span>
+        <span class="pill">Python</span>
+        <span class="pill">SQL</span>
+        <span class="pill">HTML/CSS/JS</span>
+        <span class="pill">Prompt Engineering</span>
+        <span class="pill">ERP Systems</span>
       </div>
-      <nav aria-label="Page sections">
-        <a href="#profile">Profile</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#additional">Additional</a>
-      </nav>
-    </header>
+    </div>
 
-    <!-- PROFILE + SKILLS -->
-    <section id="profile">
-      <div class="two-col">
-        <div>
-          <div class="section-title">Profile</div>
-          <p>
-            Hybrid tax‑tech professional with experience in public accounting, data analysis, AI‑assisted workflow design, and web development. Brings an MSA foundation, strong documentation habits, and a modern technical skillset (Excel, SQL, Python, HTML/CSS/JS). Combines tax workflow experience with structured problem‑solving, mathematical reasoning, and the ability to learn complex systems quickly.
-          </p>
-        </div>
-
-        <div>
-          <div class="section-title">Core Skills</div>
-
-          <div class="item">
-            <div class="item-sub"><strong>Accounting &amp; Tax</strong></div>
-            <div class="pill-list">
-              <span class="pill">Workpapers</span>
-              <span class="pill">Tax preparation</span>
-              <span class="pill">Reconciliations</span>
-              <span class="pill">Documentation</span>
-              <span class="pill">Variance checks</span>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="item-sub"><strong>Tools &amp; Data</strong></div>
-            <div class="pill-list">
-              <span class="pill">Excel (advanced)</span>
-              <span class="pill">SQL</span>
-              <span class="pill">Python</span>
-              <span class="pill">HTML / CSS / JavaScript</span>
-              <span class="pill">Automation</span>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="item-sub"><strong>Professional</strong></div>
-            <div class="pill-list">
-              <span class="pill">Communication</span>
-              <span class="pill">Collaboration</span>
-              <span class="pill">Continuous improvement</span>
-              <span class="pill">Process discipline</span>
-            </div>
-          </div>
-        </div>
+    <div>
+      <h3>Technical Accounting</h3>
+      <div class="pill-list">
+        <span class="pill">ASC 606</span>
+        <span class="pill">ASC 740</span>
+        <span class="pill">U.S. GAAP</span>
+        <span class="pill">Partnership Tax</span>
+        <span class="pill">Multi‑Entity</span>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="section-title">Experience</div>
+<section id="experience" class="section">
+  <div class="section-title">Professional Experience</div>
 
-      <!-- EY STAFF II -->
-      <article class="item">
-        <div class="item-header">
-          <div class="item-title">Tax Staff II – Ernst &amp; Young (EY)</div>
-          <div class="item-meta">San Francisco Bay Area · Prior Role</div>
-        </div>
-        <div class="item-sub">Wealth &amp; Asset Management – technical and administrative leadership</div>
-        <ul class="bullets">
-          <li>Guided an intern and new staff through Form 1065 workflows, reviewing basic errors before escalation.</li>
-          <li>Maintained and updated Python-based extraction scripts, identifying issues such as K‑1 allocation errors.</li>
-          <li>Helped junior staff interpret automated outputs and reconcile them to source documents.</li>
-          <li>Used EY Canvas, EY GTP, PartnerForms, Thomson Reuters GoSystem, and ONESOURCE/Route One.</li>
-          <li>Performed data validation using Excel to ensure accuracy across systems.</li>
-        </ul>
-      </article>
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">Tax Staff II — Ernst & Young (EY)</div>
+      <div class="item-meta">San Francisco · 2023–2025</div>
+    </div>
+    <div class="item-sub">Wealth & Asset Management · Future of Work (FoW)</div>
+    <ul class="bullets">
+      <li>Winner, EY AI Hackathon — built an AI Co‑Pilot for Form 1042‑S reporting.</li>
+      <li>Prepared 50+ partnership returns and hundreds of K‑1s for VC/PE clients.</li>
+      <li>Automated M‑1 adjustments and partnership‑tax workflows with FoW team.</li>
+      <li>Supported ASC 740 quarterly and year‑end tax provision processes.</li>
+      <li>Developed Python tools for K‑1 allocation reconciliation across platforms.</li>
+    </ul>
+  </div>
 
-      <!-- EY STAFF I -->
-      <article class="item">
-        <div class="item-header">
-          <div class="item-title">Tax Staff I – Ernst &amp; Young (EY)</div>
-          <div class="item-meta">San Francisco Bay Area · Prior Role</div>
-        </div>
-        <div class="item-sub">Diversified Staff Group – foundational tax compliance &amp; workflow support</div>
-        <ul class="bullets">
-          <li>Organized source documents, built clean workpapers, and performed tie-outs for individual, partnership, and corporate returns.</li>
-          <li>Learned EY internal systems and followed firm-standard procedures.</li>
-          <li>Performed initial data checks using Excel to identify missing information.</li>
-          <li>Supported administrative workflow tasks including tracking deliverables.</li>
-          <li>Collaborated with seniors to understand tax adjustments and review notes.</li>
-        </ul>
-      </article>
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">AI Workflow Specialist — Skywork.ai</div>
+      <div class="item-meta">2025–Present</div>
+    </div>
+    <div class="item-sub">AI workflow prototyping & product enablement</div>
+    <ul class="bullets">
+      <li>Built LedgerFlow, an AI‑assisted tax practice workflow prototype.</li>
+      <li>Delivered workshops demonstrating AI automation for accounting teams.</li>
+      <li>Collaborated with product team to refine onboarding and support materials.</li>
+    </ul>
+  </div>
 
-      <!-- SKYWORK.AI PROMOTION -->
-      <article class="item">
-        <div class="item-header">
-          <div class="item-title">AI Workflow Specialist — Skywork.ai</div>
-          <div class="item-meta">Promoted July 2026</div>
-        </div>
-        <div class="item-sub">AI workflow experimentation, product enablement, and tax‑tech prototyping</div>
-        <ul class="bullets">
-          <li>Promoted for developing LedgerFlow, a tax practice workflow prototype demonstrating AI‑assisted process design.</li>
-          <li>Demonstrated AI tools and workflow concepts to students and faculty, supporting product adoption.</li>
-          <li>Created messaging and technical explanations for both non‑technical and technical audiences.</li>
-        </ul>
-      </article>
+  <div class="item">
+    <div class="item-header">
+      <div class="item-title">Data Wrangler Intern — Broadstreet</div>
+      <div class="item-meta">2021–2022</div>
+    </div>
+    <div class="item-sub">State‑level COVID‑19 data engineering</div>
+    <ul class="bullets">
+      <li>Cleaned, standardized, and merged large public‑health datasets.</li>
+      <li>Built visualizations and reports used by public‑health agencies.</li>
+      <li>Contributed to Broadstreet’s open‑source COVID‑19 repository.</li>
+    </ul>
+  </div>
+</section>
 
-      <!-- HEIRLOOM BOX -->
-      <article class="item">
-        <div class="item-header">
-          <div class="item-title">Heirloom Box – AI Podcast Project</div>
-          <div class="item-meta">BAD 81: AI in Business · Final Team Project</div>
-        </div>
-        <div class="item-sub">Team lead for content integration and AI‑generated media</div>
-        <ul class="bullets">
-          <li>Compiled team research into a cohesive presentation.</li>
-          <li>Produced a 5‑persona AI‑generated podcast using Skywork.ai.</li>
-          <li>Coordinated team workflow for polished final output.</li>
-        </ul>
-      </article>
+<section id="projects" class="section">
+  <div class="section-title">Project Highlight</div>
+  <h3>Practice Command Center — Skywork.ai</h3>
+  <p>
+    Built a live, AI‑orchestrated command center (taxpracticeflow.skywork.website) to manage complex client engagement pipelines, automated review cycles, and documentation checklists. Demonstrates ability to build the “connective tissue” between financial data and operational workflows.
+  </p>
+</section>
 
-      <!-- BROADSTREET -->
-      <article class="item">
-        <div class="item-header">
-          <div class="item-title">Data Analysis Intern – Broadstreet</div>
-          <div class="item-meta">Remote · Prior Role</div>
-        </div>
-        <div class="item-sub">Data‑driven support for business and policy questions</div>
-        <ul class="bullets">
-          <li>Used Excel, SQL, and Python to clean and analyze datasets.</li>
-          <li>Translated technical findings into concise summaries.</li>
-        </ul>
-      </article>
-    </section>
+<section id="education" class="section">
+  <div class="section-title">Education & Certifications</div>
 
-    <!-- EDUCATION -->
-    <section id="education">
-      <div class="section-title">Education</div>
+  <div class="item">
+    <div class="item-title">M.S. Accountancy</div>
+    <div class="item-meta">California State University, Sacramento</div>
+  </div>
 
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Master of Science in Accountancy</div>
-          <div class="item-meta">California State University, Sacramento</div>
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">B.S. Business Administration – Accounting</div>
-          <div class="item-meta">Sonoma State University</div>
-        </div>
-        <div class="item-sub">Minor in Applied Statistics</div>
-      </div>
-
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">A.S. Mathematics</div>
-          <div class="item-meta">College of Marin · Expected 2028</div>
-        </div>
-        <div class="item-sub">Applied Accounting Certificate, Dec 2025</div>
-      </div>
-
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Math 108 – Algebra & Trigonometry (Pathway to Calculus)</div>
-          <div class="item-meta">College of Marin · Fall 2026</div>
-        </div>
-        <div class="item-sub">
-          Functions, trigonometry, exponential/logarithmic models, transformations, systems, identities, and problem‑solving foundations for Calculus.
-        </div>
-      </div>
-
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">Web Development I (CS50A)</div>
-          <div class="item-meta">Santa Rosa Junior College · In Progress</div>
-        </div>
-        <div class="item-sub">
-          HTML, CSS, responsive design, accessibility, UX, and modern AI‑assisted web development practices.
-        </div>
-      </div>
-    </section>
-
-    <!-- ADDITIONAL -->
-    <section id="additional">
-      <div class="section-title">Additional</div>
-
-      <div class="item">
-        <div class="item-sub"><strong>Certifications &amp; Exams</strong></div>
-        <ul class="bullets">
-          <li>CPA exam requirements completed; preparing for REG.</li>
-        </ul>
-      </div>
-
-      <div class="item">
-        <div class="item-sub"><strong>Technical</strong></div>
-        <div class="pill-list">
-          <span class="pill">Excel (advanced)</span>
-          <span class="pill">SQL</span>
-          <span class="pill">Python</span>
-          <span class="pill">HTML / CSS / JavaScript</span>
-          <span class="pill">Process automation</span>
-          <span class="pill">AI workflow prototyping</span>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      &copy; <span id="year"></span> Matthew Woytych · Tax &amp; Accounting Professional
-    </footer>
-  </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  <div class="item">
+    <div class="item-title">B.S. Business Administration — Accounting</div>
+    <div class="item-meta">Sonoma State University
