@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <title>Matthew Woytych, MSA – Tax & Accounting Professional</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Tax & Accounting Professional with experience in public accounting, data analysis, and AI-assisted workflow automation." />
+  <meta
+    name="description"
+    content="Tax & Accounting Professional with experience in public accounting, data analysis, and AI-assisted workflow automation."
+  />
 
   <style>
     :root {
@@ -69,6 +72,21 @@
 
     header .contact a:hover {
       text-decoration: underline;
+    }
+
+    nav {
+      margin-top: 16px;
+    }
+
+    nav a {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin: 0 8px;
+    }
+
+    nav a:hover {
+      color: var(--accent);
     }
 
     section {
@@ -147,12 +165,25 @@
       margin-bottom: 4px;
     }
 
+    footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
     @media (max-width: 720px) {
       main {
         padding: 24px;
       }
       .two-col {
         grid-template-columns: 1fr;
+      }
+      .item-header {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -168,15 +199,24 @@
           linkedin.com/in/mattwoytych
         </a>
       </div>
+      <nav aria-label="Page sections">
+        <a href="#profile">Profile</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#additional">Additional</a>
+      </nav>
     </header>
 
     <!-- PROFILE + SKILLS -->
-    <section>
+    <section id="profile">
       <div class="two-col">
         <div>
           <div class="section-title">Profile</div>
           <p>
-            Tax and accounting professional with experience in public accounting, data analysis, and AI‑assisted workflow projects. Brings an MSA foundation, strong documentation habits, and a modern technical skillset (Excel, SQL, Python) to support accurate workpapers, clean reconciliations, and efficient processes. Combines prior experience across multiple industries with disciplined process management, adaptability, and the ability to learn complex systems quickly.
+            Tax and accounting professional with experience in public accounting, data analysis, and AI‑assisted workflow projects.
+            Brings an MSA foundation, strong documentation habits, and a modern technical skillset (Excel, SQL, Python) to support
+            accurate workpapers, clean reconciliations, and efficient processes. Combines prior experience across multiple industries
+            with disciplined process management, adaptability, and the ability to learn complex systems quickly.
           </p>
         </div>
 
@@ -220,11 +260,11 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section>
+    <section id="experience">
       <div class="section-title">Experience</div>
 
       <!-- EY STAFF II -->
-      <div class="item">
+      <article class="item">
         <div class="item-header">
           <div class="item-title">Tax Staff II – Ernst &amp; Young (EY)</div>
           <div class="item-meta">San Francisco Bay Area · Prior Role</div>
@@ -237,15 +277,15 @@
           <li>Used EY Canvas, EY GTP, PartnerForms, Thomson Reuters GoSystem, and ONESOURCE/Route One.</li>
           <li>Performed data validation using Excel to ensure accuracy across systems.</li>
         </ul>
-      </div>
+      </article>
 
       <!-- EY STAFF I -->
-      <div class="item">
+      <article class="item">
         <div class="item-header">
           <div class="item-title">Tax Staff I – Ernst &amp; Young (EY)</div>
           <div class="item-meta">San Francisco Bay Area · Prior Role</div>
         </div>
-        <div class="item-sub">Diversified Staff Group – foundational tax compliance & workflow support</div>
+        <div class="item-sub">Diversified Staff Group – foundational tax compliance &amp; workflow support</div>
         <ul class="bullets">
           <li>Organized source documents, built clean workpapers, and performed tie-outs for individual, partnership, and corporate returns.</li>
           <li>Learned EY internal systems and followed firm-standard procedures.</li>
@@ -253,10 +293,10 @@
           <li>Supported administrative workflow tasks including tracking deliverables.</li>
           <li>Collaborated with seniors to understand tax adjustments and review notes.</li>
         </ul>
-      </div>
+      </article>
 
       <!-- SKYWORK -->
-      <div class="item">
+      <article class="item">
         <div class="item-header">
           <div class="item-title">Campus Ambassador – Skywork.ai</div>
           <div class="item-meta">College of Marin · Current/Intern</div>
@@ -266,10 +306,10 @@
           <li>Promoted AI tools on campus and demonstrated practical use cases.</li>
           <li>Developed messaging for technical and non‑technical audiences.</li>
         </ul>
-      </div>
+      </article>
 
       <!-- HEIRLOOM BOX -->
-      <div class="item">
+      <article class="item">
         <div class="item-header">
           <div class="item-title">Heirloom Box – AI Podcast Project</div>
           <div class="item-meta">BAD 81: AI in Business · Final Team Project</div>
@@ -280,10 +320,10 @@
           <li>Produced a 5‑persona AI‑generated podcast using Skywork.ai.</li>
           <li>Coordinated team workflow for polished final output.</li>
         </ul>
-      </div>
+      </article>
 
       <!-- BROADSTREET -->
-      <div class="item">
+      <article class="item">
         <div class="item-header">
           <div class="item-title">Data Analysis Intern – Broadstreet</div>
           <div class="item-meta">Remote · Prior Role</div>
@@ -293,11 +333,11 @@
           <li>Used Excel, SQL, and Python to clean and analyze datasets.</li>
           <li>Translated technical findings into concise summaries.</li>
         </ul>
-      </div>
+      </article>
     </section>
 
     <!-- EDUCATION -->
-    <section>
+    <section id="education">
       <div class="section-title">Education</div>
 
       <div class="item">
@@ -325,7 +365,7 @@
     </section>
 
     <!-- ADDITIONAL -->
-    <section>
+    <section id="additional">
       <div class="section-title">Additional</div>
 
       <div class="item">
@@ -345,6 +385,15 @@
         </div>
       </div>
     </section>
+
+    <footer>
+      &copy; <span id="year"></span> Matthew Woytych · Tax &amp; Accounting Professional
+    </footer>
   </main>
+
+  <script>
+    // Simple JS touch: keep the footer year current
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
